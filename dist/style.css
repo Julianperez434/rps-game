@@ -1,0 +1,200 @@
+:root {
+  --main-color: #1a2245;
+  --secondary-color: #161a36;
+  --text-color: #ebd12e;
+  --danger-color: #f15251;
+}
+
+body {
+  font-family: Arial;
+  font-size: 0.9rem;
+}
+
+.main-container {
+  background-image: linear-gradient(
+    to right,
+    var(--main-color),
+    var(--secondary-color)
+  );
+  width: 25em;
+  aspect-ratio: 9/16;
+  margin: 2em;
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  padding-top: 2em;
+  position: relative;
+}
+
+.user-profile-left,
+.user-profile-right {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile-left {
+  display: flex;
+  position: absolute;
+  left: 1em;
+}
+
+.user-profile-right {
+  display: flex;
+  position: absolute;
+  right: 1em;
+}
+
+.avatar {
+  --avatar-size: 4em;
+  width: var(--avatar-size);
+  aspect-ratio: 1/1;
+  box-shadow: 0.2em 0.2em 0.1em rgba(0, 0, 0, 0.5);
+  border-radius: var(--avatar-size);
+}
+
+.data {
+  width: 6em;
+  height: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding-left: 1em;
+  gap: 0.2em;
+}
+
+.user-name {
+  color: white;
+  font-weight: bold;
+}
+
+.counter {
+  color: white;
+}
+
+.field {
+  width: 25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  margin-top: 7em;
+}
+
+.computer-choice {
+  width: 10em;
+  aspect-ratio: 4/3;
+  border: 0.1em solid var(--text-color);
+  box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.4);
+  object-fit: cover;
+  background-color: white;
+}
+
+.result {
+  color: var(--text-color);
+  font-size: 2rem;
+  width: 100%;
+  text-justify: center;
+  display: flex;
+  justify-content: center;
+}
+
+.reset-btn {
+  --reset-width: 5em;
+  background-color: var(--danger-color);
+  position: absolute;
+  top: 17.5em;
+  left: -3em;
+  overflow: hidden;
+  width: var(--reset-width);
+  aspect-ratio: 1/1;
+  border-top-right-radius: var(--reset-width);
+  border-bottom-right-radius: var(--reset-width);
+  cursor: pointer;
+  transition: opacity 0.15s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: visibility 0.15s, transform 0.15s;
+}
+
+.reset-btn:hover {
+  transform: translateX(3.2em);
+  opacity: 0.8;
+}
+
+.reset-btn:hover > .reset-text {
+  visibility: visible;
+}
+
+.reset-text {
+  color: white;
+  font-weight: bold;
+  visibility: hidden;
+}
+
+.footer {
+  height: 8em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 3em;
+}
+
+.choice {
+  height: 7em;
+  border-radius: 100em;
+  width: 7em;
+  box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.4);
+  object-fit: cover;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  position: relative;
+}
+
+.choice:hover {
+  opacity: 0.8;
+}
+
+.rock-tag,
+.paper-tag,
+.scissors-tag {
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  bottom: -1.5em;
+  opacity: 0.8;
+  visibility: hidden;
+  transition: visibility 0.15s;
+}
+
+.rock-tag {
+  left: 2.25em;
+}
+
+.scissors-tag {
+  right: 1.25em;
+}
+
+.rock-btn:hover + .rock-tag {
+  visibility: visible;
+}
+
+.paper-btn:hover + .paper-tag {
+  visibility: visible;
+}
+
+.scissors-btn:hover + .scissors-tag {
+  visibility: visible;
+}
